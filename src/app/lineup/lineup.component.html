@@ -1,3 +1,8 @@
-<p>
-  lineup works!
-</p>
+<ul *ngIf="(heroes$ | async).length">
+  <li *ngFor="let hero of heroes$ | async">
+    <ul-hero [hero]="hero"></ul-hero>
+  </li>
+</ul>
+<ul *ngIf="(heroes$ | async).length">
+
+</ul>

@@ -11,15 +11,13 @@ import { HeroesModule } from './heroes/heroes.module';
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { HeroComponent } from './hero/hero.component';
 import { LineupComponent } from './lineup/lineup.component';
-import { BonusesComponent } from './bonuses/bonuses.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroListComponent,
     HeroComponent,
-    LineupComponent,
-    BonusesComponent
+    LineupComponent
   ],
   imports: [
     BrowserModule,

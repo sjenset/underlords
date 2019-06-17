@@ -11,7 +11,7 @@ import { HeroesSelectors, HeroesState } from '@app/heroes/state';
   styleUrls: ['./lineup.component.scss']
 })
 export class LineupComponent implements OnInit {
-  lineup$: Observable<Hero[]> = this.store.pipe(select(HeroesSelectors.getLineup));
+  heroes$: Observable<Hero[]> = this.store.pipe(select(HeroesSelectors.getLineup));
 
   constructor(private store: Store<HeroesState.State>) { }
 
