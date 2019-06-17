@@ -1,4 +1,12 @@
 export enum Roles {
-  MOCK1 = 'Mock 1',
-  MOCK2 = 'Mock 2'
+  DEMON_HUNTER = 'Demon Hunter',
+  WARRIOR = 'Warrior',
+  KNIGHT = 'Knight',
+  ASSASSIN = 'Assassin',
+  INVENTOR = 'Inventor',
+  HUNTER = 'Hunter',
+  DRUID = 'Druid',
+  MAGE = 'Mage',
+  SHAMAN = 'Shaman',
+  WARLOCK = 'Warlock'
 }

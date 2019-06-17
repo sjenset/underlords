@@ -1,4 +1,15 @@
 export enum Races {
-  MOCK1 = 'Mock 1',
-  MOCK2 = 'Mock 2'
+  ELUSIVE = 'Elusive',
+  BRAWNY = 'Brawny',
+  TROLL = 'Troll',
+  HUMAN = 'Human',
+  SCRAPPY = 'Scrappy',
+  HEARTLESS = 'Heartless',
+  SAVAGE = 'Savage',
+  BLOOD_BOUND = 'Blood-Bound',
+  PRIMORDIAL = 'Primordial',
+  DEMON = 'Demon',
+  DRAGON = 'Dragon',
+  SCALED = 'Scaled',
+  DEADEYE = 'Deadeye'
 }
