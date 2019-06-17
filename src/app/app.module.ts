@@ -10,12 +10,16 @@ import { environment } from 'src/environments/environment';
 import { HeroesModule } from './heroes/heroes.module';
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { HeroComponent } from './hero/hero.component';
+import { LineupComponent } from './lineup/lineup.component';
+import { BonusesComponent } from './bonuses/bonuses.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroListComponent,
-    HeroComponent
+    HeroComponent,
+    LineupComponent,
+    BonusesComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,7 @@ import { HeroComponent } from './hero/hero.component';
       maxAge: 25,
       logOnly: environment.production
     }),
-    HeroesModule
+    HeroesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
