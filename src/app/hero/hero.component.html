@@ -1,7 +1,7 @@
 <div class="hero hero--{{ hero.name | kebab }}" (click)="onHeroClicked()">
   <span class="hero__tier">{{ hero.tier }}</span>
   <div class="hero__footer">
-    <b>{{ hero.name }}</b>
+    <b class="hero__name">{{ hero.name }}</b>
     <span class="hero__races">
       <span class="hero__race hero__race--{{ race | kebab }}" *ngFor="let race of hero.races"></span>
     </span>

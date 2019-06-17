@@ -1,5 +1,5 @@
-<ul *ngIf="heroes$ | async">
-  <li *ngFor="let hero of heroes$ | async">
+<ul class="hero-list" *ngIf="heroes$ | async">
+  <li class="hero-list__item" *ngFor="let hero of heroes$ | async">
     <ul-hero [hero]="hero"></ul-hero>
   </li>
 </ul>

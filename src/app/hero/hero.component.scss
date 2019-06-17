@@ -1,4 +1,8 @@
 .hero {
+    position: relative;
+    width: 165px;
+    height: 164px;
+    margin: 8px;
     background: no-repeat center center;
     background-size: auto 164px;
 
@@ -239,5 +243,21 @@
 
     &--tidehunter {
         background-image: url('/assets/images/tidehunter.jpg');
+    }
+
+    &__footer {
+        box-sizing: border-box;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 4px 8px;
+        background-color: rgba(black, 0.5);
+        color: white;
+    }
+
+    &__name {
+        display: block;
+        text-align: center;
     }
 }
