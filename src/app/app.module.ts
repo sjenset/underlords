@@ -11,13 +11,15 @@ import { HeroesModule } from './heroes/heroes.module';
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { HeroComponent } from './hero/hero.component';
 import { LineupComponent } from './lineup/lineup.component';
+import { KebabPipe } from './shared/kebab.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroListComponent,
     HeroComponent,
-    LineupComponent
+    LineupComponent,
+    KebabPipe
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,7 @@ import { LineupComponent } from './lineup/lineup.component';
       maxAge: 25,
       logOnly: environment.production
     }),
-    HeroesModule,
+    HeroesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

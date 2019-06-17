@@ -154,7 +154,7 @@ export const Heroes: Array<Hero> = [
     tier: 2
   },
   {
-    name: '',
+    name: 'Slardar',
     races: [Races.SCALED],
     roles: [Roles.WARRIOR],
     tier: 2
