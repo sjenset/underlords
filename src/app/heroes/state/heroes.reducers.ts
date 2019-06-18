@@ -13,7 +13,7 @@ export function heroesReducer(state: HeroesState = initialState, action: HeroesA
         return {
           ...state,
           lineup: state.lineup.filter(hero => hero.name !== action.payload.hero.name)
-        }
+        };
       }
       return {
         ...state,
@@ -21,7 +21,7 @@ export function heroesReducer(state: HeroesState = initialState, action: HeroesA
           action.payload.hero,
           ...state.lineup
         ]
-      }
+      };
     default:
       return state;
   }
