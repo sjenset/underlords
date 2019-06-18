@@ -8,7 +8,7 @@ export interface Hero {
   tier: number;
 }
 
-export const Heroes: Array<Hero> = [
+export const Heroes: Hero[] = [
   {
     name: 'Anti-mage',
     races: [Races.ELUSIVE],
