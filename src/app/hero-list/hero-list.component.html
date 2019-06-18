@@ -1,5 +1,5 @@
-<ul class="hero-list" *ngIf="heroes$ | async">
-  <li class="hero-list__item" *ngFor="let hero of heroes$ | async">
-    <ul-hero [hero]="hero"></ul-hero>
+<ul class="hero-list" *ngIf="heroes">
+  <li class="hero-list__item" *ngFor="let hero of heroes">
+    <ul-hero [hero]="hero" [dimWhenSelected]="dimSelected"></ul-hero>
   </li>
 </ul>

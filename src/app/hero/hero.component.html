@@ -1,4 +1,4 @@
-<div class="hero hero--{{ hero.name | kebab }}" (click)="onHeroClicked()">
+<div class="hero hero--{{ hero.name | kebab }}" [ngClass]="{'hero--dimmed': dimWhenSelected && inLineup}" (click)="onHeroClicked()">
   <span class="hero__tier">{{ hero.tier }}</span>
   <div class="hero__footer">
     <b class="hero__name">{{ hero.name }}</b>

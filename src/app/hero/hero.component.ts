@@ -11,13 +11,13 @@ import { Hero } from '../shared/data/heroes';
 })
 export class HeroComponent implements OnInit {
   @Input() hero: Hero;
+  @Input() dimWhenSelected: boolean;
   inLineup: boolean;
 
   constructor(private store: Store<HeroesState.State>) { }
 
   ngOnInit() {
     this.store.pipe(select(HeroesSelectors.isInLineup, this.hero)).subscribe(isInLineup => {
-      console.log(`Is ${this.hero.name} in the lineup?: ${isInLineup}`);
       this.inLineup = isInLineup;
     });
   }

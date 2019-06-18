@@ -1,8 +1,8 @@
-<ul *ngIf="(heroes$ | async).length">
-  <li *ngFor="let hero of heroes$ | async">
-    <ul-hero [hero]="hero"></ul-hero>
-  </li>
-</ul>
-<ul *ngIf="(heroes$ | async).length">
+<p>Lineup</p>
+<ul-hero-list [heroes]="heroes$ | async"></ul-hero-list>
+<div *ngIf="(heroes$ | async).length">
+  <p>Bonuses</p>
+  <ul>
 
-</ul>
+  </ul>
+</div>

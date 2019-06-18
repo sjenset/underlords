@@ -6,6 +6,10 @@
     background: no-repeat center center;
     background-size: auto 164px;
 
+    &--dimmed {
+      filter: grayscale(1);
+    }
+
     &--anti-mage {
         background-image: url('/assets/images/anti-mage.jpg');
     }
@@ -44,7 +48,7 @@
     &--shadow-shaman {
         background-image: url('/assets/images/shadow-shaman.jpg');
     }
-    
+
     &--tinker {
         background-image: url('/assets/images/tinker.jpg');
     }
@@ -104,7 +108,7 @@
     &--slardar {
         background-image: url('/assets/images/slardar.jpg');
     }
-    
+
     &--timbersaw {
         background-image: url('/assets/images/timbersaw.jpg');
     }

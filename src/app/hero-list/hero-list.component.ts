@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Store, select } from '@ngrx/store';
+import { Component, OnInit, Input } from '@angular/core';
 
-import { HeroesState, HeroesActions, HeroesSelectors } from '@app/heroes/state';
 import { Observable } from 'rxjs';
 import { Hero } from '@shared/data/heroes';
 
@@ -12,11 +10,12 @@ import { Hero } from '@shared/data/heroes';
   styleUrls: ['./hero-list.component.scss']
 })
 export class HeroListComponent implements OnInit {
-  heroes$: Observable<Hero[]> = this.store.pipe(select(HeroesSelectors.getHeroes));
+  @Input() heroes: Observable<Hero[]>;
+  @Input() dimSelected: boolean;
+  sortBy = 'tier';
+  subSortBy = 'name';
 
-  constructor(private store: Store<HeroesState.State>) { }
+  constructor() { }
 
-  ngOnInit() {
-    this.store.dispatch(new HeroesActions.GetHeroes());
-  }
+  ngOnInit() { }
 }

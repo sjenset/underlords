@@ -4,6 +4,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
+import { KebabPipe } from './shared/kebab.pipe';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
@@ -11,14 +12,15 @@ import { HeroesModule } from './heroes/heroes.module';
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { HeroComponent } from './hero/hero.component';
 import { LineupComponent } from './lineup/lineup.component';
-import { KebabPipe } from './shared/kebab.pipe';
+import { RosterComponent } from './roster/roster.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    RosterComponent,
+    LineupComponent,
     HeroListComponent,
     HeroComponent,
-    LineupComponent,
     KebabPipe
   ],
   imports: [
