@@ -1,7 +1,10 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 
-import { HeroStates, HeroModels, HeroActions } from './state';
+import { Hero } from './hero.model';
+import { RosterStates } from '@app/roster/state';
+import { LineupActions, LineupSelectors } from '@app/lineup/state';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'ul-hero',
@@ -10,21 +13,22 @@ import { HeroStates, HeroModels, HeroActions } from './state';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeroComponent implements OnInit {
-  @Input() hero: HeroModels.Hero;
+  @Input() hero: Hero;
   @Input() dimWhenSelected: boolean;
+  inLineup: boolean;
 
-  constructor(private store: Store<HeroStates.HeroState>) { }
+  constructor(private store: Store<RosterStates.RosterState>) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.store.pipe(select(LineupSelectors.isSelected, this.hero.name)).subscribe(inLineup => this.inLineup = inLineup);
+  }
 
   onHeroClicked(): void {
-    this.store.dispatch(new HeroActions.UpdateHero({
-      hero: {
-        id: this.hero.name,
-        changes: {
-          inLineup: !this.hero.inLineup
-        }
-      }
-    }));
+    if (this.inLineup) {
+      this.store.dispatch(new LineupActions.RemoveHero({ name: this.hero.name }));
+
+      return;
+    }
+    this.store.dispatch(new LineupActions.AddHero({ hero: this.hero }));
   }
 }

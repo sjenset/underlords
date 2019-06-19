@@ -8,11 +8,12 @@ import { KebabPipe } from './shared/kebab.pipe';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
-import { HeroModule } from './hero/hero.module';
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { HeroComponent } from './hero/hero.component';
 import { LineupComponent } from './lineup/lineup.component';
 import { RosterComponent } from './roster/roster.component';
+import { RosterModule } from './roster/roster.module';
+import { LineupModule } from './lineup/lineup.module';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RosterComponent } from './roster/roster.component';
       maxAge: 25,
       logOnly: environment.production
     }),
-    HeroModule
+    RosterModule,
+    LineupModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Heroes } from './data/heroes';
-import { HeroModels } from '@app/hero/state';
+import { Hero } from '@app/hero/hero.model';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,7 @@ import { HeroModels } from '@app/hero/state';
 export class DataService {
   constructor() { }
 
-  public getHeroes(): HeroModels.Hero[] {
+  public getHeroes(): Hero[] {
     return Heroes;
   }
 }

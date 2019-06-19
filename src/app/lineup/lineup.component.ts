@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { HeroModels, HeroSelectors, HeroStates } from '@app/hero/state';
-import { SortFacets, SortOrders, SortOptions } from '@app/hero/state/hero.selectors';
 
-
+import { Hero } from '@app/hero/hero.model';
+import { LineupStates, LineupSelectors } from './state';
+import { AppSorter } from '@app/state';
 
 @Component({
   selector: 'ul-lineup',
@@ -12,31 +12,31 @@ import { SortFacets, SortOrders, SortOptions } from '@app/hero/state/hero.select
   styleUrls: ['./lineup.component.scss']
 })
 export class LineupComponent implements OnInit {
-  heroes$: Observable<HeroModels.Hero[]> = this.store.pipe(select(HeroSelectors.selectLineup, this.getSortOptions()));
-  private sortFacets: SortFacets[] = [SortFacets.TIER, SortFacets.NAME];
-  private sortOrder: SortOrders = SortOrders.ASC;
+  heroes$: Observable<Hero[]> = this.store.pipe(select(LineupSelectors.selectHeroes, this.getSortOptions()));
+  private sortFacets: AppSorter.SortFacets[] = [AppSorter.SortFacets.TIER, AppSorter.SortFacets.NAME];
+  private sortOrder: AppSorter.SortOrders = AppSorter.SortOrders.ASC;
 
-  constructor(private store: Store<HeroStates.HeroState>) { }
+  constructor(private store: Store<LineupStates.LineupState>) { }
 
   ngOnInit() {
-    this.heroes$ = this.store.pipe(select(HeroSelectors.selectLineup, this.getSortOptions()));
+    this.heroes$ = this.store.pipe(select(LineupSelectors.selectHeroes, this.getSortOptions()));
   }
 
-  setSortFacets(sortFacets: SortFacets[]): void {
+  setSortFacets(sortFacets: AppSorter.SortFacets[]): void {
     this.sortFacets = sortFacets;
     this.sort();
   }
 
-  setSortOrder(sortOrder: SortOrders): void {
+  setSortOrder(sortOrder: AppSorter.SortOrders): void {
     this.sortOrder = sortOrder;
     this.sort();
   }
 
   private sort() {
-    this.heroes$ = this.store.pipe(select(HeroSelectors.selectLineup, this.getSortOptions()));
+    this.heroes$ = this.store.pipe(select(LineupSelectors.selectHeroes, this.getSortOptions()));
   }
 
-  private getSortOptions(): SortOptions {
+  private getSortOptions(): AppSorter.SortOptions {
     return {
       facets: this.sortFacets,
       order: this.sortOrder

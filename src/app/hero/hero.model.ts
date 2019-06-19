@@ -6,5 +6,4 @@ export interface Hero {
   races: Races[];
   roles: Roles[];
   tier: number;
-  inLineup?: boolean;
 }
