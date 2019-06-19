@@ -1,12 +1,12 @@
 export enum Roles {
-  DEMON_HUNTER = 'Demon Hunter',
-  WARRIOR = 'Warrior',
-  KNIGHT = 'Knight',
   ASSASSIN = 'Assassin',
-  INVENTOR = 'Inventor',
-  HUNTER = 'Hunter',
+  DEMON_HUNTER = 'Demon Hunter',
   DRUID = 'Druid',
+  HUNTER = 'Hunter',
+  INVENTOR = 'Inventor',
+  KNIGHT = 'Knight',
   MAGE = 'Mage',
   SHAMAN = 'Shaman',
-  WARLOCK = 'Warlock'
+  WARLOCK = 'Warlock',
+  WARRIOR = 'Warrior'
 }

@@ -3,10 +3,10 @@
   <div class="hero__footer">
     <b class="hero__name">{{ hero.name }}</b>
     <span class="hero__races">
-      <span class="hero__race hero__race--{{ race | kebab }}" *ngFor="let race of hero.races"></span>
+      <span *ngFor="let race of hero.races" class="hero__race hero__race--{{ race | kebab }}" title="{{ race }}"></span>
     </span>
     <span class="hero__roles">
-        <span class="hero__role hero__role--{{ role | kebab }}" *ngFor="let role of hero.roles"></span>
+        <span *ngFor="let role of hero.roles" class="hero__role hero__role--{{ role | kebab }}" title="{{ role }}"></span>
       </span>
   </div>
 </div>

@@ -1,280 +1,400 @@
 .hero {
-    position: relative;
-    width: 165px;
-    height: 164px;
-    margin: 8px;
+  position: relative;
+  width: 165px;
+  height: 164px;
+  margin: 8px;
+  background: no-repeat center center;
+  background-size: auto 164px;
+
+  &--dimmed {
+    filter: grayscale(1);
+  }
+
+  &--abaddon {
+    background-image: url('/assets/images/heroes/abaddon.jpg');
+  }
+
+  &--alchemist {
+    background-image: url('/assets/images/heroes/alchemist.jpg');
+  }
+
+  &--anti-mage {
+    background-image: url('/assets/images/heroes/anti-mage.jpg');
+  }
+
+  &--arc-warden {
+    background-image: url('/assets/images/heroes/arc-warden.jpg');
+  }
+
+  &--axe {
+    background-image: url('/assets/images/heroes/axe.jpg');
+  }
+
+  &--batrider {
+    background-image: url('/assets/images/heroes/batrider.jpg');
+  }
+
+  &--beastmaster {
+    background-image: url('/assets/images/heroes/beastmaster.jpg');
+  }
+
+  &--bloodseeker {
+    background-image: url('/assets/images/heroes/bloodseeker.jpg');
+  }
+
+  &--bounty-hunter {
+    background-image: url('/assets/images/heroes/bounty-hunter.jpg');
+  }
+
+  &--chaos-knight {
+    background-image: url('/assets/images/heroes/chaos-knight.jpg');
+  }
+
+  &--clockwerk {
+    background-image: url('/assets/images/heroes/clockwerk.jpg');
+  }
+
+  &--crystal-maiden {
+    background-image: url('/assets/images/heroes/crystal-maiden.jpg');
+  }
+
+  &--disruptor {
+    background-image: url('/assets/images/heroes/disruptor.jpg');
+  }
+
+  &--doom {
+    background-image: url('/assets/images/heroes/doom.jpg');
+  }
+
+  &--dragon-knight {
+    background-image: url('/assets/images/heroes/dragon-knight.jpg');
+  }
+
+  &--drow-ranger {
+    background-image: url('/assets/images/heroes/drow-ranger.jpg');
+  }
+
+  &--enchantress {
+    background-image: url('/assets/images/heroes/enchantress.jpg');
+  }
+
+  &--enigma {
+    background-image: url('/assets/images/heroes/enigma.jpg');
+  }
+
+  &--gyrocopter {
+    background-image: url('/assets/images/heroes/gyrocopter.jpg');
+  }
+
+  &--juggernaut {
+    background-image: url('/assets/images/heroes/juggernaut.jpg');
+  }
+
+  &--keeper-of-the-light {
+    background-image: url('/assets/images/heroes/keeper-of-the-light.jpg');
+  }
+
+  &--kunka {
+    background-image: url('/assets/images/heroes/kunka.jpg');
+  }
+
+  &--lich {
+    background-image: url('/assets/images/heroes/lich.jpg');
+  }
+
+  &--lina {
+    background-image: url('/assets/images/heroes/lina.jpg');
+  }
+
+  &--lone-druid {
+    background-image: url('/assets/images/heroes/lone-druid.jpg');
+  }
+
+  &--luna {
+    background-image: url('/assets/images/heroes/luna.jpg');
+  }
+
+  &--lycan {
+    background-image: url('/assets/images/heroes/lycan.jpg');
+  }
+
+  &--medusa {
+    background-image: url('/assets/images/heroes/medusa.jpg');
+  }
+
+  &--mirana {
+    background-image: url('/assets/images/heroes/mirana.jpg');
+  }
+
+  &--morphling {
+    background-image: url('/assets/images/heroes/morphling.jpg');
+  }
+
+  &--natures-prophet {
+    background-image: url('/assets/images/heroes/natures-prophet.jpg');
+  }
+
+  &--necrophos {
+    background-image: url('/assets/images/heroes/necrophos.jpg');
+  }
+
+  &--ogre-magi {
+    background-image: url('/assets/images/heroes/ogre-magi.jpg');
+  }
+
+  &--omniknight {
+    background-image: url('/assets/images/heroes/omniknight.jpg');
+  }
+
+  &--phantom-assassin {
+    background-image: url('/assets/images/heroes/phantom-assassin.jpg');
+  }
+
+  &--puck {
+    background-image: url('/assets/images/heroes/puck.jpg');
+  }
+
+  &--pudge {
+    background-image: url('/assets/images/heroes/pudge.jpg');
+  }
+
+  &--queen-of-pain {
+    background-image: url('/assets/images/heroes/queen-of-pain.jpg');
+  }
+
+  &--razor {
+    background-image: url('/assets/images/heroes/razor.jpg');
+  }
+
+  &--sandking {
+    background-image: url('/assets/images/heroes/sandking.jpg');
+  }
+
+  &--shadow-fiend {
+    background-image: url('/assets/images/heroes/shadow-fiend.jpg');
+  }
+
+  &--shadow-shaman {
+    background-image: url('/assets/images/heroes/shadow-shaman.jpg');
+  }
+
+  &--slardar {
+    background-image: url('/assets/images/heroes/slardar.jpg');
+  }
+
+  &--slark {
+    background-image: url('/assets/images/heroes/slark.jpg');
+  }
+
+  &--sniper {
+    background-image: url('/assets/images/heroes/sniper.jpg');
+  }
+
+  &--techies {
+    background-image: url('/assets/images/heroes/techies.jpg');
+  }
+
+    &--templar-assassin {
+    background-image: url('/assets/images/heroes/templar-assassin.jpg');
+  }
+
+  &--terrorblade {
+    background-image: url('/assets/images/heroes/terrorblade.jpg');
+  }
+
+  &--tidehunter {
+    background-image: url('/assets/images/heroes/tidehunter.jpg');
+  }
+
+  &--timbersaw {
+    background-image: url('/assets/images/heroes/timbersaw.jpg');
+  }
+
+  &--tinker {
+    background-image: url('/assets/images/heroes/tinker.jpg');
+  }
+
+  &--tiny {
+    background-image: url('/assets/images/heroes/tiny.jpg');
+  }
+
+  &--treant-protector {
+    background-image: url('/assets/images/heroes/treant-protector.jpg');
+  }
+
+  &--troll-warlord {
+    background-image: url('/assets/images/heroes/troll-warlord.jpg');
+  }
+
+  &--tusk {
+    background-image: url('/assets/images/heroes/tusk.jpg');
+  }
+
+  &--venomancer {
+    background-image: url('/assets/images/heroes/venomancer.jpg');
+  }
+
+  &--viper {
+    background-image: url('/assets/images/heroes/viper.jpg');
+  }
+
+  &--warlock {
+    background-image: url('/assets/images/heroes/warlock.jpg');
+  }
+
+  &--wind-ranger {
+    background-image: url('/assets/images/heroes/wind-ranger.jpg');
+  }
+
+  &--witchdoctor {
+    background-image: url('/assets/images/heroes/witchdoctor.jpg');
+  }
+
+&__tier {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: rgba(white, 0.75);
+    border-radius: 50%;
+  }
+
+  &__footer {
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 4px 8px;
+    background-color: rgba(black, 0.5);
+    color: white;
+  }
+
+  &__name {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  &__races,
+  &__roles {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 50%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 -4px -4px;
+  }
+
+  &__race,
+  &__role {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: 4px;
     background: no-repeat center center;
-    background-size: auto 164px;
+    background-size: auto 25px;
+  }
 
-    &--dimmed {
-      filter: grayscale(1);
+  &__race {
+    &--blood-bound {
+      background-image: url('/assets/icons/races/blood-bound.png');
     }
 
-    &--anti-mage {
-        background-image: url('/assets/images/anti-mage.jpg');
-    }
-    &--axe {
-        background-image: url('/assets/images/axe.jpg');
+    &--brawny {
+      background-image: url('/assets/icons/races/brawny.png');
     }
 
-    &--batrider {
-        background-image: url('/assets/images/batrider.jpg');
+    &--deadeye {
+      background-image: url('/assets/icons/races/deadeye.png');
     }
 
-    &--bloodseeker {
-        background-image: url('/assets/images/bloodseeker.jpg');
+    &--demon {
+      background-image: url('/assets/icons/races/demon.png');
     }
 
-    &--bounty-hunter {
-        background-image: url('/assets/images/bounty-hunter.jpg');
+    &--dragon {
+      background-image: url('/assets/icons/races/dragon.png');
     }
 
-    &--clockwerk {
-        background-image: url('/assets/images/clockwerk.jpg');
+    &--elusive {
+      background-image: url('/assets/icons/races/elusive.png');
     }
 
-    &--drow-ranger {
-        background-image: url('/assets/images/drow-ranger.jpg');
+    &--heartless {
+      background-image: url('/assets/icons/races/heartless.png');
     }
 
-    &--enchantress {
-        background-image: url('/assets/images/enchantress.jpg');
+    &--human {
+      background-image: url('/assets/icons/races/human.png');
     }
 
-    &--ogre-magi {
-        background-image: url('/assets/images/ogre-magi.jpg');
+    &--primordial {
+      background-image: url('/assets/icons/races/primordial.png');
     }
 
-    &--shadow-shaman {
-        background-image: url('/assets/images/shadow-shaman.jpg');
+    &--savage {
+      background-image: url('/assets/icons/races/savage.png');
     }
 
-    &--tinker {
-        background-image: url('/assets/images/tinker.jpg');
+    &--scaled {
+      background-image: url('/assets/icons/races/scaled.png');
     }
 
-    &--tiny {
-        background-image: url('/assets/images/tiny.jpg');
+    &--scrappy {
+      background-image: url('/assets/icons/races/scrappy.png');
     }
 
-    &--tusk {
-        background-image: url('/assets/images/tusk.jpg');
+    &--troll {
+      background-image: url('/assets/icons/races/troll.png');
+    }
+  }
+
+  &__role {
+    &--assassin {
+      background-image: url('/assets/icons/roles/assassin.png');
+    }
+
+    &--demon-hunter {
+      background-image: url('/assets/icons/roles/demon-hunter.png');
+    }
+
+    &--druid {
+      background-image: url('/assets/icons/roles/druid.png');
+    }
+
+    &--hunter {
+      background-image: url('/assets/icons/roles/hunter.png');
+    }
+
+    &--inventor {
+      background-image: url('/assets/icons/roles/inventor.png');
+    }
+
+    &--knight {
+      background-image: url('/assets/icons/roles/knight.png');
+    }
+
+    &--mage {
+      background-image: url('/assets/icons/roles/mage.png');
+    }
+
+    &--shaman {
+      background-image: url('/assets/icons/roles/shaman.png');
     }
 
     &--warlock {
-        background-image: url('/assets/images/warlock.jpg');
+      background-image: url('/assets/icons/roles/warlock.png');
     }
 
-    &--beastmaster {
-        background-image: url('/assets/images/beastmaster.jpg');
+    &--warrior {
+      background-image: url('/assets/icons/roles/warrior.png');
     }
-
-    &--chaos-knight {
-        background-image: url('/assets/images/chaos-knight.jpg');
-    }
-
-    &--crystal-maiden {
-        background-image: url('/assets/images/crystal-maiden.jpg');
-    }
-
-    &--juggernaut {
-        background-image: url('/assets/images/juggernaut.jpg');
-    }
-
-    &--luna {
-        background-image: url('/assets/images/luna.jpg');
-    }
-
-    &--morphling {
-        background-image: url('/assets/images/morphling.jpg');
-    }
-
-    &--natures-prophet {
-        background-image: url('/assets/images/natures-prophet.jpg');
-    }
-
-    &--puck {
-        background-image: url('/assets/images/puck.jpg');
-    }
-
-    &--pudge {
-        background-image: url('/assets/images/pudge.jpg');
-    }
-
-    &--queen-of-pain {
-        background-image: url('/assets/images/queen-of-pain.jpg');
-    }
-
-    &--slardar {
-        background-image: url('/assets/images/slardar.jpg');
-    }
-
-    &--timbersaw {
-        background-image: url('/assets/images/timbersaw.jpg');
-    }
-
-    &--treant-protector {
-        background-image: url('/assets/images/treant-protector.jpg');
-    }
-
-    &--witchdoctor {
-        background-image: url('/assets/images/witchdoctor.jpg');
-    }
-
-    &--abaddon {
-        background-image: url('/assets/images/abaddon.jpg');
-    }
-
-    &--arc-warden {
-        background-image: url('/assets/images/arc-warden.jpg');
-    }
-
-    &--lina {
-        background-image: url('/assets/images/lina.jpg');
-    }
-
-    &--lycan {
-        background-image: url('/assets/images/lycan.jpg');
-    }
-
-    &--omniknight {
-        background-image: url('/assets/images/omniknight.jpg');
-    }
-
-    &--phantom-assassin {
-        background-image: url('/assets/images/phantom-assassin.jpg');
-    }
-
-    &--razor {
-        background-image: url('/assets/images/razor.jpg');
-    }
-
-    &--sandking {
-        background-image: url('/assets/images/sandking.jpg');
-    }
-
-    &--shadow-fiend {
-        background-image: url('/assets/images/shadow-fiend.jpg');
-    }
-
-    &--slark {
-        background-image: url('/assets/images/slark.jpg');
-    }
-
-    &--sniper {
-        background-image: url('/assets/images/sniper.jpg');
-    }
-
-    &--terrorblade {
-        background-image: url('/assets/images/terrorblade.jpg');
-    }
-
-    &--venomancer {
-        background-image: url('/assets/images/venomancer.jpg');
-    }
-
-    &--viper {
-        background-image: url('/assets/images/viper.jpg');
-    }
-
-    &--wind-ranger {
-        background-image: url('/assets/images/wind-ranger.jpg');
-    }
-
-    &--alchemist {
-        background-image: url('/assets/images/alchemist.jpg');
-    }
-
-    &--disruptor {
-        background-image: url('/assets/images/disruptor.jpg');
-    }
-
-    &--doom {
-        background-image: url('/assets/images/doom.jpg');
-    }
-
-    &--dragon-knight {
-        background-image: url('/assets/images/dragon-knight.jpg');
-    }
-
-    &--keeper-of-the-light {
-        background-image: url('/assets/images/keeper-of-the-light.jpg');
-    }
-
-    &--kunka {
-        background-image: url('/assets/images/kunka.jpg');
-    }
-
-    &--lone-druid {
-        background-image: url('/assets/images/lone-druid.jpg');
-    }
-
-    &--medusa {
-        background-image: url('/assets/images/medusa.jpg');
-    }
-
-    &--mirana {
-        background-image: url('/assets/images/mirana.jpg');
-    }
-
-    &--necrophos {
-        background-image: url('/assets/images/necrophos.jpg');
-    }
-
-    &--templar-assassin {
-        background-image: url('/assets/images/templar-assassin.jpg');
-    }
-
-    &--troll-warlord {
-        background-image: url('/assets/images/troll-warlord.jpg');
-    }
-
-    &--enigma {
-        background-image: url('/assets/images/enigma.jpg');
-    }
-
-    &--gyrocopter {
-        background-image: url('/assets/images/gyrocopter.jpg');
-    }
-
-    &--lich {
-        background-image: url('/assets/images/lich.jpg');
-    }
-
-    &--techies {
-        background-image: url('/assets/images/techies.jpg');
-    }
-
-    &--tidehunter {
-        background-image: url('/assets/images/tidehunter.jpg');
-    }
-
-    &__tier {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 24px;
-      height: 24px;
-      background-color: rgba(white, 0.75);
-      border-radius: 50%;
-    }
-
-    &__footer {
-        box-sizing: border-box;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        padding: 4px 8px;
-        background-color: rgba(black, 0.5);
-        color: white;
-    }
-
-    &__name {
-        display: block;
-        text-align: center;
-    }
+  }
 }
