@@ -1,5 +1,5 @@
 <div *ngIf="heroes">
-  <b (click)="sortByTier()">Tier</b> - <b (click)="sortByName()">Name</b>
+  <b (click)="sortBy('tier')">Tier</b> - <b (click)="sortBy('name')">Name</b> - <b (click)="sortOrder(1)">Ascend</b> - <b (click)="sortOrder(-1)">Descend</b>
 <ul class="hero-list">
   <li class="hero-list__item" *ngFor="let hero of heroes">
     <ul-hero [hero]="hero" [dimWhenSelected]="dimSelected"></ul-hero>

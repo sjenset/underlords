@@ -1,7 +1,8 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 
 import { Observable } from 'rxjs';
 import { HeroModels } from '@app/hero/state';
+import { SortFacets, SortOrders } from '@app/hero/state/hero.selectors';
 
 @Component({
   selector: 'ul-hero-list',
@@ -12,15 +13,30 @@ import { HeroModels } from '@app/hero/state';
 export class HeroListComponent implements OnInit {
   @Input() heroes: Observable<HeroModels.Hero[]>;
   @Input() dimSelected: boolean;
-  sortBy = 'tier';
+  @Output() sortFacetsChanged: EventEmitter<SortFacets[]> = new EventEmitter<SortFacets[]>();
+  @Output() sortOrderChanged: EventEmitter<SortOrders> = new EventEmitter<SortOrders>();
 
   constructor() { }
 
   ngOnInit() { }
 
-  sortByTier() {
+  sortBy(sortBy: SortFacets): void {
+    switch (sortBy) {
+      case SortFacets.RACE:
+        this.sortFacetsChanged.emit([SortFacets.RACE, SortFacets.TIER, SortFacets.NAME]);
+        break;
+      case SortFacets.ROLE:
+        this.sortFacetsChanged.emit([SortFacets.ROLE, SortFacets.TIER, SortFacets.NAME]);
+        break;
+      case SortFacets.NAME:
+        this.sortFacetsChanged.emit([SortFacets.NAME]);
+        break;
+      default:
+        this.sortFacetsChanged.emit([SortFacets.TIER, SortFacets.NAME]);
+    }
   }
 
-  sortByName() {
+  sortOrder(sortOrder: SortOrders): void {
+    this.sortOrderChanged.emit(sortOrder);
   }
 }

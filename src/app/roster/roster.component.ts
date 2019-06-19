@@ -3,8 +3,8 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { Hero } from '@app/hero/state/hero.model';
-import { HeroSelectors, HeroStates, HeroActions } from '@app/hero/state';
-import { DataService } from '@app/shared/data.service';
+import { HeroSelectors, HeroStates } from '@app/hero/state';
+import { SortFacets, SortOptions, SortOrders } from '@app/hero/state/hero.selectors';
 
 
 @Component({
@@ -13,11 +13,34 @@ import { DataService } from '@app/shared/data.service';
   styleUrls: ['./roster.component.scss']
 })
 export class RosterComponent implements OnInit {
-  heroes$: Observable<Hero[]> = this.store.pipe(select(HeroSelectors.selectAll));
+  heroes$: Observable<Hero[]>;
+  private sortFacets: SortFacets[] = [SortFacets.TIER, SortFacets.NAME];
+  private sortOrder: SortOrders = SortOrders.ASC;
 
-  constructor(private store: Store<HeroStates.HeroState>, private dataService: DataService) { }
+  constructor(private store: Store<HeroStates.HeroState>) { }
 
   ngOnInit() {
-    this.store.dispatch(new HeroActions.LoadHeroes({heroes: this.dataService.getHeroes()}));
+    this.heroes$ = this.store.pipe(select(HeroSelectors.selectRoster, this.getSortOptions()));
+  }
+
+  setSortFacets(sortFacets: SortFacets[]): void {
+    this.sortFacets = sortFacets;
+    this.sort();
+  }
+
+  setSortOrder(sortOrder: SortOrders): void {
+    this.sortOrder = sortOrder;
+    this.sort();
+  }
+
+  private sort() {
+    this.heroes$ = this.store.pipe(select(HeroSelectors.selectRoster, this.getSortOptions()));
+  }
+
+  private getSortOptions(): SortOptions {
+    return {
+      facets: this.sortFacets,
+      order: this.sortOrder
+    };
   }
 }

@@ -249,6 +249,19 @@
         background-image: url('/assets/images/tidehunter.jpg');
     }
 
+    &__tier {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      background-color: rgba(white, 0.75);
+      border-radius: 50%;
+    }
+
     &__footer {
         box-sizing: border-box;
         position: absolute;
