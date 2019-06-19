@@ -5,6 +5,7 @@
   margin: 8px;
   background: no-repeat center center;
   background-size: auto 164px;
+  cursor: pointer;
 
   &--dimmed {
     filter: grayscale(1);
@@ -261,10 +262,10 @@
     height: 24px;
     background-color: rgba(white, 0.75);
     border-radius: 50%;
+    pointer-events: none;
   }
 
   &__footer {
-    box-sizing: border-box;
     position: absolute;
     left: 0;
     bottom: 0;
@@ -280,6 +281,7 @@
   &__name {
     flex-basis: 100%;
     text-align: center;
+    pointer-events: none;
   }
 
   &__races,
@@ -289,7 +291,6 @@
     flex-basis: 50%;
     justify-content: center;
     align-items: center;
-    margin: 0 -4px -4px;
   }
 
   &__race,
