@@ -6,15 +6,9 @@ import { HeroModels } from '@app/hero/state';
   providedIn: 'root'
 })
 export class DataService {
-  private currentId = 1;
-
   constructor() { }
 
   public getHeroes(): HeroModels.Hero[] {
-    const heroes = [];
-    Heroes.forEach(hero => {
-      heroes.push(Object.assign({}, hero, { id: this.currentId++ }));
-    });
-    return heroes;
+    return Heroes;
   }
 }

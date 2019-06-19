@@ -20,7 +20,7 @@ export class HeroComponent implements OnInit {
   onHeroClicked(): void {
     this.store.dispatch(new HeroActions.UpdateHero({
       hero: {
-        id: this.hero.id,
+        id: this.hero.name,
         changes: {
           inLineup: !this.hero.inLineup
         }

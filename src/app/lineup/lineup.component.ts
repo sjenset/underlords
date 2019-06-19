@@ -19,7 +19,7 @@ export class LineupComponent implements OnInit {
   constructor(private store: Store<HeroStates.HeroState>) { }
 
   ngOnInit() {
-    this.heroes$ = this.store.pipe(select(HeroSelectors.selectRoster, this.getSortOptions()));
+    this.heroes$ = this.store.pipe(select(HeroSelectors.selectLineup, this.getSortOptions()));
   }
 
   setSortFacets(sortFacets: SortFacets[]): void {
@@ -33,7 +33,7 @@ export class LineupComponent implements OnInit {
   }
 
   private sort() {
-    this.heroes$ = this.store.pipe(select(HeroSelectors.selectRoster, this.getSortOptions()));
+    this.heroes$ = this.store.pipe(select(HeroSelectors.selectLineup, this.getSortOptions()));
   }
 
   private getSortOptions(): SortOptions {
