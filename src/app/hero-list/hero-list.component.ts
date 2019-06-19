@@ -1,21 +1,26 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 
 import { Observable } from 'rxjs';
-import { Hero } from '@shared/data/heroes';
-
+import { HeroModels } from '@app/hero/state';
 
 @Component({
   selector: 'ul-hero-list',
   templateUrl: './hero-list.component.html',
-  styleUrls: ['./hero-list.component.scss']
+  styleUrls: ['./hero-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeroListComponent implements OnInit {
-  @Input() heroes: Observable<Hero[]>;
+  @Input() heroes: Observable<HeroModels.Hero[]>;
   @Input() dimSelected: boolean;
   sortBy = 'tier';
-  subSortBy = 'name';
 
   constructor() { }
 
   ngOnInit() { }
+
+  sortByTier() {
+  }
+
+  sortByName() {
+  }
 }

@@ -1,28 +1,30 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Store, select } from '@ngrx/store';
+import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Store } from '@ngrx/store';
 
-import { HeroesState, HeroesSelectors, HeroesActions } from '@app/heroes/state';
-import { Hero } from '../shared/data/heroes';
+import { HeroStates, HeroModels, HeroActions } from './state';
 
 @Component({
   selector: 'ul-hero',
   templateUrl: './hero.component.html',
-  styleUrls: ['./hero.component.scss']
+  styleUrls: ['./hero.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeroComponent implements OnInit {
-  @Input() hero: Hero;
+  @Input() hero: HeroModels.Hero;
   @Input() dimWhenSelected: boolean;
-  inLineup: boolean;
 
-  constructor(private store: Store<HeroesState.State>) { }
+  constructor(private store: Store<HeroStates.HeroState>) { }
 
-  ngOnInit() {
-    this.store.pipe(select(HeroesSelectors.isInLineup, this.hero)).subscribe(isInLineup => {
-      this.inLineup = isInLineup;
-    });
-  }
+  ngOnInit() { }
 
   onHeroClicked(): void {
-    this.store.dispatch(new HeroesActions.ModifiyLineup({hero: this.hero, removeFromLineup: this.inLineup}));
+    this.store.dispatch(new HeroActions.UpdateHero({
+      hero: {
+        id: this.hero.id,
+        changes: {
+          inLineup: !this.hero.inLineup
+        }
+      }
+    }));
   }
 }

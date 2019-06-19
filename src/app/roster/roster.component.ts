@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-
-import { HeroesState, HeroesActions, HeroesSelectors } from '@app/heroes/state';
 import { Observable } from 'rxjs';
-import { Hero } from '@shared/data/heroes';
+
+import { Hero } from '@app/hero/state/hero.model';
+import { HeroSelectors, HeroStates, HeroActions } from '@app/hero/state';
+import { DataService } from '@app/shared/data.service';
 
 
 @Component({
@@ -12,11 +13,11 @@ import { Hero } from '@shared/data/heroes';
   styleUrls: ['./roster.component.scss']
 })
 export class RosterComponent implements OnInit {
-  heroes$: Observable<Hero[]> = this.store.pipe(select(HeroesSelectors.getHeroes));
+  heroes$: Observable<Hero[]> = this.store.pipe(select(HeroSelectors.selectAll));
 
-  constructor(private store: Store<HeroesState.State>) { }
+  constructor(private store: Store<HeroStates.HeroState>, private dataService: DataService) { }
 
   ngOnInit() {
-    this.store.dispatch(new HeroesActions.GetHeroes());
+    this.store.dispatch(new HeroActions.LoadHeroes({heroes: this.dataService.getHeroes()}));
   }
 }

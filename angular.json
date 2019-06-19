@@ -136,5 +136,8 @@
       }
     }
   },
-  "defaultProject": "underlords"
+  "defaultProject": "underlords",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
