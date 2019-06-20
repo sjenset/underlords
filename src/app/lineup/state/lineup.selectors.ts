@@ -21,4 +21,4 @@ export const selectHeroes = createSelector(
 export const isInLineup = createSelector(
   selectAll,
   (heroes: Hero[], heroName: string) => heroes.filter(hero => hero.name === heroName).length > 0
-)
+);
