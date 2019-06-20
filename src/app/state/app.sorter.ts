@@ -17,7 +17,7 @@ export interface SortOptions {
   order: SortOrders;
 }
 
-export const SortHeroes = (options: SortOptions) => {
+export const sortHeroes = (options: SortOptions) => {
   return (a: Hero, b: Hero) => {
     return options.facets.map((facet: string) => {
       return a[facet] > b[facet] ? options.order : a[facet] < b[facet] ? -(options.order) : 0;

@@ -2,8 +2,7 @@ import { Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter
 
 import { Observable } from 'rxjs';
 import { Hero } from '@app/hero/hero.model';
-import { AppSorter } from '@app/state';
-import { SortOrders, SortFacets } from '@app/state/app.sorter';
+import { SortFacets, SortOrders } from '@app/state';
 
 @Component({
   selector: 'ul-hero-list',
@@ -14,8 +13,8 @@ import { SortOrders, SortFacets } from '@app/state/app.sorter';
 export class HeroListComponent implements OnInit {
   @Input() heroes: Observable<Hero[]>;
   @Input() dimSelected: boolean;
-  @Output() sortFacetsChanged: EventEmitter<AppSorter.SortFacets[]> = new EventEmitter<AppSorter.SortFacets[]>();
-  @Output() sortOrderChanged: EventEmitter<AppSorter.SortOrders> = new EventEmitter<AppSorter.SortOrders>();
+  @Output() sortFacetsChanged: EventEmitter<SortFacets[]> = new EventEmitter<SortFacets[]>();
+  @Output() sortOrderChanged: EventEmitter<SortOrders> = new EventEmitter<SortOrders>();
 
   constructor() { }
 
@@ -23,17 +22,17 @@ export class HeroListComponent implements OnInit {
 
   sortBy(sortBy: SortFacets): void {
     switch (sortBy) {
-      case AppSorter.SortFacets.RACE:
-        this.sortFacetsChanged.emit([AppSorter.SortFacets.RACE, AppSorter.SortFacets.TIER, AppSorter.SortFacets.NAME]);
+      case SortFacets.RACE:
+        this.sortFacetsChanged.emit([SortFacets.RACE, SortFacets.TIER, SortFacets.NAME]);
         break;
-      case AppSorter.SortFacets.ROLE:
-        this.sortFacetsChanged.emit([AppSorter.SortFacets.ROLE, AppSorter.SortFacets.TIER, AppSorter.SortFacets.NAME]);
+      case SortFacets.ROLE:
+        this.sortFacetsChanged.emit([SortFacets.ROLE, SortFacets.TIER, SortFacets.NAME]);
         break;
-      case AppSorter.SortFacets.NAME:
-        this.sortFacetsChanged.emit([AppSorter.SortFacets.NAME]);
+      case SortFacets.NAME:
+        this.sortFacetsChanged.emit([SortFacets.NAME]);
         break;
       default:
-        this.sortFacetsChanged.emit([AppSorter.SortFacets.TIER, AppSorter.SortFacets.NAME]);
+        this.sortFacetsChanged.emit([SortFacets.TIER, SortFacets.NAME]);
     }
   }
 

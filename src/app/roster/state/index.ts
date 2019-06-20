@@ -1,9 +1,3 @@
-import * as RosterActions from './roster.actions';
-import * as RosterSelectors from './roster.selectors';
-import * as RosterStates from './roster.state';
-
-export {
-  RosterActions,
-  RosterSelectors,
-  RosterStates
-};
+export * from './roster.actions';
+export * from './roster.selectors';
+export * from './roster.state';

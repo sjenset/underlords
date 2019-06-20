@@ -3,8 +3,8 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { Hero } from '@app/hero/hero.model';
-import { LineupStates, LineupSelectors } from './state';
-import { AppSorter } from '@app/state';
+import { selectHeroes, LineupState } from './state';
+import { SortFacets, SortOrders, SortOptions } from '@app/state';
 
 @Component({
   selector: 'ul-lineup',
@@ -12,31 +12,31 @@ import { AppSorter } from '@app/state';
   styleUrls: ['./lineup.component.scss']
 })
 export class LineupComponent implements OnInit {
-  heroes$: Observable<Hero[]> = this.store.pipe(select(LineupSelectors.selectHeroes, this.getSortOptions()));
-  private sortFacets: AppSorter.SortFacets[] = [AppSorter.SortFacets.TIER, AppSorter.SortFacets.NAME];
-  private sortOrder: AppSorter.SortOrders = AppSorter.SortOrders.ASC;
+  heroes$: Observable<Hero[]> = this.store.pipe(select(selectHeroes, this.getSortOptions()));
+  private sortFacets: SortFacets[] = [SortFacets.TIER, SortFacets.NAME];
+  private sortOrder: SortOrders = SortOrders.ASC;
 
-  constructor(private store: Store<LineupStates.LineupState>) { }
+  constructor(private store: Store<LineupState>) { }
 
   ngOnInit() {
-    this.heroes$ = this.store.pipe(select(LineupSelectors.selectHeroes, this.getSortOptions()));
+    this.heroes$ = this.store.pipe(select(selectHeroes, this.getSortOptions()));
   }
 
-  setSortFacets(sortFacets: AppSorter.SortFacets[]): void {
+  setSortFacets(sortFacets: SortFacets[]): void {
     this.sortFacets = sortFacets;
     this.sort();
   }
 
-  setSortOrder(sortOrder: AppSorter.SortOrders): void {
+  setSortOrder(sortOrder: SortOrders): void {
     this.sortOrder = sortOrder;
     this.sort();
   }
 
   private sort() {
-    this.heroes$ = this.store.pipe(select(LineupSelectors.selectHeroes, this.getSortOptions()));
+    this.heroes$ = this.store.pipe(select(selectHeroes, this.getSortOptions()));
   }
 
-  private getSortOptions(): AppSorter.SortOptions {
+  private getSortOptions(): SortOptions {
     return {
       facets: this.sortFacets,
       order: this.sortOrder

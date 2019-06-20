@@ -2,9 +2,9 @@ import { createSelector, createFeatureSelector } from '@ngrx/store';
 
 import { Hero } from '@app/hero/hero.model';
 import { AppAdapter } from '@app/state/app.adapter';
-import { AppState, AppSorter } from '@app/state';
+import { FeatureState, SortOptions, sortHeroes } from '@app/state';
 
-const getLineupFeatureState = createFeatureSelector<AppState.FeatureState>('lineup');
+const getLineupFeatureState = createFeatureSelector<FeatureState>('lineup');
 
 export const {
   selectAll,
@@ -15,7 +15,7 @@ export const {
 
 export const selectHeroes = createSelector(
   selectAll,
-  (heroes: Hero[], props: AppSorter.SortOptions) => heroes.sort(AppSorter.SortHeroes(props))
+  (heroes: Hero[], props: SortOptions) => heroes.sort(sortHeroes(props))
 );
 
 export const isSelected = createSelector(
