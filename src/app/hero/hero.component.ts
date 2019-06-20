@@ -3,7 +3,7 @@ import { Store, select } from '@ngrx/store';
 
 import { Hero } from './hero.model';
 import { FeatureState } from '@app/state';
-import { isSelected, RemoveHero, AddHero } from '@app/lineup/state';
+import { isInLineup, RemoveHero, AddHero } from '@app/lineup/state';
 
 @Component({
   selector: 'ul-hero',
@@ -19,7 +19,7 @@ export class HeroComponent implements OnInit {
   constructor(private store: Store<FeatureState>) { }
 
   ngOnInit() {
-    this.store.pipe(select(isSelected, this.hero.name)).subscribe(inLineup => this.inLineup = inLineup);
+    this.store.pipe(select(isInLineup, this.hero.name)).subscribe(inLineup => this.inLineup = inLineup);
   }
 
   onHeroClicked(): void {

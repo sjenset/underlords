@@ -18,7 +18,7 @@ export const selectHeroes = createSelector(
   (heroes: Hero[], props: SortOptions) => heroes.sort(sortHeroes(props))
 );
 
-export const isSelected = createSelector(
+export const isInLineup = createSelector(
   selectAll,
   (heroes: Hero[], heroName: string) => heroes.filter(hero => hero.name === heroName).length > 0
 )
