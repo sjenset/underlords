@@ -1,9 +1,10 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
-import { Store, select } from '@ngrx/store';
-
-import { Hero } from './hero.model';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { AddHero, isInLineup, RemoveHero } from '@app/lineup/state';
 import { FeatureState } from '@app/state';
-import { isInLineup, RemoveHero, AddHero } from '@app/lineup/state';
+import { select, Store } from '@ngrx/store';
+import { Hero } from './hero.model';
+
+
 
 @Component({
   selector: 'ul-hero',

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Store, select } from '@ngrx/store';
-import { Observable } from 'rxjs';
-
 import { Hero } from '@app/hero/hero.model';
-import { selectHeroes, LineupState } from './state';
-import { SortFacets, SortOrders, SortOptions } from '@app/state';
+import { SortFacets, SortOptions, SortOrders } from '@app/state';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { LineupState, selectHeroes } from './state';
+
 
 @Component({
   selector: 'ul-lineup',

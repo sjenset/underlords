@@ -2,7 +2,12 @@ import { Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter
 
 import { Observable } from 'rxjs';
 import { Hero } from '@app/hero/hero.model';
-import { SortFacets, SortOrders } from '@app/state';
+import { SortFacets, SortOrders, FeatureState } from '@app/state';
+import { filterHeroes2 } from '@app/roster/state/filters/roster-filter.selectors';
+import { select, Store } from '@ngrx/store';
+import { selectTotal } from '@app/roster/state';
+import { FilterValue } from '@app/roster/state/filters';
+import { RosterFilterUpdateAction } from '@app/roster/state/filters/roster-filter.actions';
 
 @Component({
   selector: 'ul-hero-list',
@@ -16,9 +21,39 @@ export class HeroListComponent implements OnInit {
   @Output() sortFacetsChanged: EventEmitter<SortFacets[]> = new EventEmitter<SortFacets[]>();
   @Output() sortOrderChanged: EventEmitter<SortOrders> = new EventEmitter<SortOrders>();
 
-  constructor() { }
+  constructor(private store: Store<FeatureState>) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.testFiltering();
+  }
+
+//#region testing
+
+  private testFiltering(): void {
+    const filters: FilterValue[] = [
+      { filterType: 'tier', values: ['1', '2'] },
+    ];
+    const filteredItems$ = this.store.pipe(select(filterHeroes2, filters));
+    // filteredItems$.subscribe(console.log);
+    this.store.pipe(select(selectTotal))
+      .subscribe(res => { console.log(`Total heroes: ${res}`); });
+
+    filteredItems$
+    .subscribe(res => { console.log(res); });
+  }
+
+  public toggleTierFilter(tier: string) {
+    this.store.dispatch(new RosterFilterUpdateAction({ filter: {
+      id: 'tier',
+      changes: { value: tier }
+    } }));
+  }
+
+
+
+
+
+//#endregion
 
   sortBy(sortBy: SortFacets): void {
     switch (sortBy) {
