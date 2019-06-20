@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { Hero } from '@app/hero/hero.model';
+import { Hero } from '@app/hero/state/hero.model';
 import { DataService } from '@app/shared/data.service';
-import { SortFacets, SortOrders, SortOptions } from '@app/state';
+import { SortFacets, SortOrders, SortOptions } from '@app/hero/state';
 import { RosterState, selectHeroes, LoadHeroes } from './state';
 
 @Component({

@@ -1,0 +1,12 @@
+<div class="alliance">
+  <h3>{{ alliance.requirements }}</h3>
+  <div class="alliance__slots">
+    <span *ngFor="let key of alliance.slots | slotArray" class="alliance__slot {{ alliance.requirements | kebab }}"
+      [ngClass]="{'alliance__slot--active': (key < alliance.active && (!alliance.maxAllowed || alliance.active <= alliance.maxAllowed))}"></span>
+  </div>
+  <p *ngIf="activeBonus" class="alliance__bonus">
+    <span *ngIf="(!alliance.maxAllowed || alliance.active <= alliance.maxAllowed); else error">{{ activeBonus.amountRequired }}: {{ activeBonus.text }}</span>
+    <ng-template #error>
+      <i>This bonus has become invalidated as you have exceeded the maximum amount allowed (allowed: <b>{{ alliance.maxAllowed }}</b>, you have: <b>{{ alliance.active }}</b>)</i>
+    </ng-template>
+  </p>

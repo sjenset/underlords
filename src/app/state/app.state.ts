@@ -1,17 +1,19 @@
 import { EntityState } from '@ngrx/entity';
 
-import { AppAdapter } from './app.adapter';
-import { Hero } from '@app/hero/hero.model';
+import { HeroAdapter } from '../hero/state/hero.adapter';
+import { Hero } from '@app/hero/state/hero.model';
+import { Alliance } from '@app/alliances/state/alliances.model';
+import { AllianceAdapter } from '@app/alliances/state/alliances.adapter';
 
 // tslint:disable-next-line:no-empty-interface
 export interface AppState {}
 
 export const InitialAppState: AppState = {};
 
-export interface FeatureState extends EntityState<Hero> {
-  // additional entities state properties
-}
+export interface HeroFeatureState extends EntityState<Hero> { }
 
-export const InitialFeatureState: FeatureState = AppAdapter.getInitialState({
-  // additional entity state properties
-});
+export interface AllianceFeatureState extends EntityState<Alliance> { }
+
+export const InitialHeroFeatureState: HeroFeatureState = HeroAdapter.getInitialState({});
+
+export const InitialAllianceFeatureState: AllianceFeatureState = AllianceAdapter.getInitialState({});

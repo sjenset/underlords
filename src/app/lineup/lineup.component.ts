@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { Hero } from '@app/hero/hero.model';
+import { Hero } from '@app/hero/state/hero.model';
 import { selectHeroes, LineupState } from './state';
-import { SortFacets, SortOrders, SortOptions } from '@app/state';
+import { SortFacets, SortOrders, SortOptions } from '@app/hero/state';
 
 @Component({
   selector: 'ul-lineup',
@@ -12,7 +12,7 @@ import { SortFacets, SortOrders, SortOptions } from '@app/state';
   styleUrls: ['./lineup.component.scss']
 })
 export class LineupComponent implements OnInit {
-  heroes$: Observable<Hero[]> = this.store.pipe(select(selectHeroes, this.getSortOptions()));
+  heroes$: Observable<Hero[]>;
   private sortFacets: SortFacets[] = [SortFacets.TIER, SortFacets.NAME];
   private sortOrder: SortOrders = SortOrders.ASC;
 

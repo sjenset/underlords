@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 
 import { Observable } from 'rxjs';
-import { Hero } from '@app/hero/hero.model';
-import { SortFacets, SortOrders } from '@app/state';
+import { Hero } from '@app/hero/state/hero.model';
+import { SortFacets, SortOrders } from '@app/hero/state';
 
 @Component({
   selector: 'ul-hero-list',

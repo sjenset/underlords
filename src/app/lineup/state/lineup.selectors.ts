@@ -1,17 +1,17 @@
 import { createSelector, createFeatureSelector } from '@ngrx/store';
 
-import { Hero } from '@app/hero/hero.model';
-import { AppAdapter } from '@app/state/app.adapter';
-import { FeatureState, SortOptions, sortHeroes } from '@app/state';
+import { Hero } from '@app/hero/state/hero.model';
+import { HeroFeatureState } from '@app/state/';
+import { SortOptions, sortHeroes, HeroAdapter } from '@app/hero/state';
 
-const getLineupFeatureState = createFeatureSelector<FeatureState>('lineup');
+const getLineupFeatureState = createFeatureSelector<HeroFeatureState>('lineup');
 
 export const {
   selectAll,
   selectEntities,
   selectIds,
   selectTotal,
-} = AppAdapter.getSelectors(getLineupFeatureState);
+} = HeroAdapter.getSelectors(getLineupFeatureState);
 
 export const selectHeroes = createSelector(
   selectAll,

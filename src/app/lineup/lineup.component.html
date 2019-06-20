@@ -1,8 +1,5 @@
-<h2>Lineup</h2>
-<ul-hero-list [heroes]="heroes$ | async" (sortFacetsChanged)="setSortFacets($event)" (sortOrderChanged)="setSortOrder($event)"></ul-hero-list>
-<div *ngIf="(heroes$ | async).length">
-  <h3>Bonuses</h3>
-  <ul>
-
-  </ul>
-</div>
+<section *ngIf="(heroes$ | async).length">
+  <h2>Lineup</h2>
+  <ul-hero-list [heroes]="heroes$ | async" (sortFacetsChanged)="setSortFacets($event)"
+    (sortOrderChanged)="setSortOrder($event)"></ul-hero-list>
+</section>

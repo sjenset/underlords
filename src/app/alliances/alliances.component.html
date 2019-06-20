@@ -1,0 +1,8 @@
+<section *ngIf="(alliances$ | async).length">
+  <h2>Alliances</h2>
+  <ul class="alliance-list">
+    <li class="alliance-list__item" *ngFor="let alliance of alliances$ | async">
+      <ul-alliance [alliance]="alliance"></ul-alliance>
+    </li>
+  </ul>
+</section>
