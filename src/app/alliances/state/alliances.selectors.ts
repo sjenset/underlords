@@ -1,9 +1,9 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-
-import { AllianceFeatureState } from '@app/state';
+import { Hero } from '_app/hero/state';
+import { AllianceFeatureState } from '_app/state';
 import { AllianceAdapter } from './alliances.adapter';
 import { Alliance } from './alliances.model';
-import { Hero } from '@app/hero/state';
+
 
 const getAlliancesFeatureState = createFeatureSelector<AllianceFeatureState>('alliances');
 

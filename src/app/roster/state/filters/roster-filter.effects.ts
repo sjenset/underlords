@@ -1,7 +1,7 @@
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import * as RosterFilterActions from '../filters/roster-filter.actions';
 import { switchMap, tap } from 'rxjs/operators';
-import { DataService } from '@app/shared/data.service';
+import { DataService } from '_app/shared/data.service';
 import { of } from 'rxjs';
 import { Injectable } from '@angular/core';
 

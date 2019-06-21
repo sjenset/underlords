@@ -1,6 +1,6 @@
 import { Races } from './races';
 import { Roles } from './roles';
-import { Alliance } from '@app/alliances/state';
+import { Alliance } from '_app/alliances/state';
 
 export const Alliances: Alliance[] = [
   {

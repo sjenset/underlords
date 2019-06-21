@@ -1,23 +1,23 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
 import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-
-import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
-import { KebabPipe } from './shared/kebab.pipe';
-import { SlotArrayPipe } from './shared/slot-array.pipe';
-import { RosterComponent } from './roster/roster.component';
-import { LineupComponent } from './lineup/lineup.component';
+import { AllianceComponent } from './alliance/alliance.component';
 import { AlliancesComponent } from './alliances/alliances.component';
+import { AlliancesModule } from './alliances/alliances.module';
+import { AppComponent } from './app.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { HeroComponent } from './hero/hero.component';
-import { RosterModule } from './roster/roster.module';
+import { LineupComponent } from './lineup/lineup.component';
 import { LineupModule } from './lineup/lineup.module';
-import { AlliancesModule } from './alliances/alliances.module';
-import { AllianceComponent } from './alliance/alliance.component';
+import { RosterComponent } from './roster/roster.component';
+import { RosterModule } from './roster/roster.module';
+import { KebabPipe } from './shared/kebab.pipe';
+import { SlotArrayPipe } from './shared/slot-array.pipe';
+
 
 @NgModule({
   declarations: [

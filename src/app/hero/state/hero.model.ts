@@ -1,5 +1,5 @@
-import { Races } from '@shared/data/races';
-import { Roles } from '@shared/data/roles';
+import { Races } from '_shared/data/races';
+import { Roles } from '_shared/data/roles';
 
 export interface Hero {
   name: string;

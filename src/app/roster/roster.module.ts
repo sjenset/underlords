@@ -5,7 +5,7 @@ import { RosterReducer } from './state/roster.reducer';
 import { _RosterFilterReducer } from './state/filters/roster-filter.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { RosterFilterEffects } from './state/filters/roster-filter.effects';
-import { SharedModule } from '@app/shared/shared.module';
+import { SharedModule } from '_app/shared/shared.module';
 
 @NgModule({
   declarations: [],
