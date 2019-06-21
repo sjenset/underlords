@@ -12,8 +12,6 @@ export class RosterFilterEffects {
         private dataService: DataService
         ) {}
 
-    // private actions$ = of(null);
-
     @Effect()
     loadDefaultFilters$ = this.actions$.pipe(
         ofType(RosterFilterActions.LoadFilters.type),

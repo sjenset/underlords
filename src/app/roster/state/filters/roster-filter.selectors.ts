@@ -1,24 +1,22 @@
 import { Hero } from '@app/hero/hero.model';
-import { createSelector } from '@ngrx/store';
-import { selectAll } from '../roster.selectors';
+import { createSelector, createFeatureSelector } from '@ngrx/store';
 import { FilterValue } from './roster-filter.types';
+import { RosterFilterAdapter } from './roster-filter.adapter';
+import { RosterFilterFeatureState } from './roster-filter.state';
 
 // export const filterHeroes = createSelector(
 //     selectAll,
 //     (heroes: Hero[], state: RosterState) => state.activeFilters ? filterFn(heroes, state.activeFilters) : heroes
 //   );
 
-export const filterHeroes2 = createSelector(
-    selectAll,
-    (heroes: Hero[], filters: FilterValue[]) => filterFn(heroes, filters)
-);
+const getRosterFiltersFeatureState = createFeatureSelector<RosterFilterFeatureState>('rosterFilters');
 
-function filterFn(heroes: Hero[], filters: FilterValue[]) {
-    // return heroes.filter(hero =>
-      // filters.some( (filter) =>
-        // tslint:disable-next-line:triple-equals
-        // hero[filter.filterType] == filter.value));
-}
+export const {
+  selectAll,
+  selectEntities,
+  selectIds,
+  selectTotal,
+} = RosterFilterAdapter.getSelectors(getRosterFiltersFeatureState);
 
 // Sorting methods
 function sortByName(a, b) {

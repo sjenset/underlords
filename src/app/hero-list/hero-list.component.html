@@ -9,7 +9,7 @@
 
     <!-- <input *ngFor="let item of [1,2,3,4,5]; let i=index" type="checkbox" value="i"><b>{{item}}</b> -->
     <span *ngFor="let item of [1,2,3,4,5]; let i=index;">
-      <input [name]="'tier_'+i" type="checkbox" value="i" [(ngModel)]="tiers[i]" (click)="updateTierFilters()">{{i}}
+      <input [name]="'tier_'+i" type="checkbox" value="item" [(ngModel)]="tiers[i]" (change)="updateTierFilters2()">{{item}}
     </span>
     <!-- <input name="tiers[]" type="checkbox" value="2"/>2
     <input name="tiers[]" type="checkbox" value="3"/>3
