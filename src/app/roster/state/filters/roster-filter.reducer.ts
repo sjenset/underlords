@@ -24,8 +24,6 @@ export function RosterFilterReducer(
 
 const rosterFilterReducer = createReducer(
   IntialRosterFilterFeatureState,
-  // on(RosterFilterUpdateAction, (state: RosterFilterFeatureState, {  }))
-  // on(UpdateTiersSelected, (state: RosterFilterFeatureState, { tiers } ) => RosterFilterAdapter.updateOne(tiers, state))
   on(UpdateTiersSelected, (state: RosterFilterFeatureState, { tiers } ) => 
   RosterFilterAdapter.updateOne(tiers, state)),
   on(LoadFiltersSuccess, (state: RosterFilterFeatureState, { filters }) => RosterFilterAdapter.addMany(filters, state))

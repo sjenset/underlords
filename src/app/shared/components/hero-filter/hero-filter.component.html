@@ -1,0 +1,6 @@
+<form name="myForm" #f="ngForm">
+
+  <span *ngFor="let item of [1,2,3,4,5]; let i=index;">
+    <input [name]="'tier_'+i" type="checkbox" value="item" [(ngModel)]="tiers[i]" (change)="updateTierFilters2()">{{item}}
+  </span>
+</form>
