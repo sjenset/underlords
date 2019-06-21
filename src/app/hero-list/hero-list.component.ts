@@ -7,7 +7,7 @@ import { filterHeroes2 } from '@app/roster/state/filters/roster-filter.selectors
 import { select, Store } from '@ngrx/store';
 import { selectTotal } from '@app/roster/state';
 import { FilterValue } from '@app/roster/state/filters';
-import { RosterFilterUpdateAction } from '@app/roster/state/filters/roster-filter.actions';
+import { RosterFilterUpdateAction, UpdateTiersSelected, LoadFilters } from '@app/roster/state/filters/roster-filter.actions';
 
 @Component({
   selector: 'ul-hero-list',
@@ -21,17 +21,51 @@ export class HeroListComponent implements OnInit {
   @Output() sortFacetsChanged: EventEmitter<SortFacets[]> = new EventEmitter<SortFacets[]>();
   @Output() sortOrderChanged: EventEmitter<SortOrders> = new EventEmitter<SortOrders>();
 
+  tiers = Array(5).fill(false);
+
+  public get tierFilters(): FilterValue {
+    return { filterType: 'tiers', values: this.tiers };
+  }
+
   constructor(private store: Store<FeatureState>) { }
 
   ngOnInit() {
     this.testFiltering();
+    this.loadDefaultFilters();
+  }
+
+  test(val) {
+    console.log(val);
+    console.log(this.tiers);
+  }
+
+  loadDefaultFilters(): void {
+    this.store.dispatch(LoadFilters());
+  }
+
+  // updateTierFilters(): void {
+  //   this.store.dispatch(new RosterFilterUpdateAction({ filter: {
+  //     id: 'tier',
+  //     changes: { values: this.tiers }
+  //   } }));
+  // }
+
+  updateTierFilters(): void {
+    this.store.dispatch(UpdateTiersSelected({
+      tiers: {
+        id: 'tiers',
+        changes: {
+          values: this.tiers
+        }
+      }
+    }));
   }
 
 //#region testing
 
   private testFiltering(): void {
     const filters: FilterValue[] = [
-      { filterType: 'tier', values: ['1', '2'] },
+      { filterType: 'tiers', values: this.tiers },
     ];
     const filteredItems$ = this.store.pipe(select(filterHeroes2, filters));
     // filteredItems$.subscribe(console.log);
@@ -45,13 +79,9 @@ export class HeroListComponent implements OnInit {
   public toggleTierFilter(tier: string) {
     this.store.dispatch(new RosterFilterUpdateAction({ filter: {
       id: 'tier',
-      changes: { value: tier }
+      changes: { values: [] }
     } }));
   }
-
-
-
-
 
 //#endregion
 

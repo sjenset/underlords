@@ -4,6 +4,23 @@
     <button>1</button>
     <button>2</button>
   </div>
+
+  <form name="myForm" #f="ngForm">
+
+    <!-- <input *ngFor="let item of [1,2,3,4,5]; let i=index" type="checkbox" value="i"><b>{{item}}</b> -->
+    <span *ngFor="let item of [1,2,3,4,5]; let i=index;">
+      <input [name]="'tier_'+i" type="checkbox" value="i" [(ngModel)]="tiers[i]" (click)="updateTierFilters()">{{i}}
+    </span>
+    <!-- <input name="tiers[]" type="checkbox" value="2"/>2
+    <input name="tiers[]" type="checkbox" value="3"/>3
+    <input name="tiers[]" type="checkbox" value="4"/>4
+    <input name="tiers[]" (change)="test($event)" type="checkbox" value="5"/>5 -->
+  </form>
+
+  <pre>{{
+      tiers | json
+    }}
+    </pre>
   
   <b (click)="sortBy('tier')">Tier</b> - <b (click)="sortBy('name')">Name</b> - <b (click)="sortOrder(1)">Ascend</b> -
   <b (click)="sortOrder(-1)">Descend</b>
@@ -13,5 +30,7 @@
     </li>
   </ul>
 
+
+  
 
 </div>

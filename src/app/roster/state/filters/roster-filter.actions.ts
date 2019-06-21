@@ -1,5 +1,5 @@
 import { FilterValue } from './roster-filter.types';
-import { Action } from '@ngrx/store';
+import { Action, createAction, props, union } from '@ngrx/store';
 import { Update } from '@ngrx/entity';
 
 export enum RosterFilterActionTypes {
@@ -13,3 +13,14 @@ export class RosterFilterUpdateAction implements Action {
 }
 
 export type RosterFilterActions = RosterFilterUpdateAction;
+
+export const LoadFilters = createAction('[RosterFilter] Load filters');
+export const LoadFiltersSuccess = createAction('[RosterFilter] Load filters success', (filters: FilterValue[]) => ({ filters }));
+export const UpdateTiersSelected = createAction('[RosterFilter] Update tiers selected', props<{ tiers: Update<FilterValue> }>());
+
+const actions = union({
+    LoadFilters,
+    LoadFiltersSuccess
+});
+
+export type Actions = typeof actions;
