@@ -1,7 +1,7 @@
-import { Action } from '@ngrx/store';
-import { Hero } from '@app/hero/state/hero.model';
-import { Alliance } from './alliances.model';
 import { Update } from '@ngrx/entity';
+import { Action } from '@ngrx/store';
+import { Hero } from '_app/hero/state/hero.model';
+import { Alliance } from './alliances.model';
 
 
 export enum AlliancesActionTypes {

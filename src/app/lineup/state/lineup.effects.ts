@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Action } from '@ngrx/store';
 import { Actions, Effect, ofType } from '@ngrx/effects';
+import { Action } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { AddForHero, RemoveForHero } from '_app/alliances/state';
+import { AddHero, LineupActionTypes, RemoveHero } from './lineup.actions';
 
-import { LineupActionTypes, AddHero, RemoveHero } from './lineup.actions';
-import { AddForHero, RemoveForHero } from '@app/alliances/state';
 
 @Injectable()
 export class LineupEffects {

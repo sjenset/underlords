@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
+import { Hero } from '_app/hero/state/hero.model';
 
-import { Hero } from '@app/hero/state/hero.model';
 
 export enum LineupActionTypes {
   AddHero = '[Lineup] Add Hero',

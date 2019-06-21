@@ -1,4 +1,4 @@
-import { AppState, InitialAllianceFeatureState, AllianceFeatureState } from '@app/state/app.state';
+import { AllianceFeatureState, AppState, InitialAllianceFeatureState } from '_app/state/app.state';
 import { AlliancesActions, AlliancesActionTypes } from './alliances.actions';
 import { AllianceAdapter } from './alliances.adapter';
 

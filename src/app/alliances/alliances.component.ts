@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 
 import { Observable } from 'rxjs';
-import { DataService } from '@app/shared/data.service';
+import { DataService } from '_app/shared/data.service';
 import { AlliancesState, selectAlliances, Load, Alliance } from './state';
 
 @Component({

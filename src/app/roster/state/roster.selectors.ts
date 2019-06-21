@@ -1,10 +1,10 @@
-import { createSelector, createFeatureSelector } from '@ngrx/store';
-
-import { Hero } from '@app/hero/state/hero.model';
-import { HeroFeatureState } from '@app/state/';
-import { SortOptions, sortHeroes, HeroAdapter } from '@app/hero/state';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { HeroAdapter, sortHeroes, SortOptions } from '_app/hero/state';
+import { Hero } from '_app/hero/state/hero.model';
+import { HeroFeatureState } from '_app/state/';
 import { FilterValue } from './filters';
 import * as RosterFilterSelectors from './filters/roster-filter.selectors';
+
 
 const getRosterFeatureState = createFeatureSelector<HeroFeatureState>('roster');
 

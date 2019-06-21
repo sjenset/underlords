@@ -1,13 +1,13 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
-
-import { Observable } from 'rxjs';
-import { Hero } from '@app/hero/state/hero.model';
-import { SortFacets, SortOrders } from '@app/hero/state';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { selectTotal, filterHeroes2 } from '@app/roster/state';
-import { FilterValue } from '@app/roster/state/filters';
-import { RosterFilterUpdateAction, UpdateTiersSelected, LoadFilters } from '@app/roster/state/filters/roster-filter.actions';
-import { HeroFeatureState } from '@app/state';
+import { Observable } from 'rxjs';
+import { SortFacets, SortOrders } from '_app/hero/state';
+import { Hero } from '_app/hero/state/hero.model';
+import { filterHeroes2, selectTotal } from '_app/roster/state';
+import { FilterValue } from '_app/roster/state/filters';
+import { LoadFilters, RosterFilterUpdateAction, UpdateTiersSelected } from '_app/roster/state/filters/roster-filter.actions';
+import { HeroFeatureState } from '_app/state';
+
 
 @Component({
   selector: 'ul-hero-list',

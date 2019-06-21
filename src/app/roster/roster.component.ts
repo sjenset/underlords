@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Store, select } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { Hero } from '@app/hero/state/hero.model';
-import { DataService } from '@app/shared/data.service';
-import { SortFacets, SortOrders, SortOptions } from '@app/hero/state';
-import { RosterState, selectHeroes, LoadHeroes } from './state';
+import { SortFacets, SortOptions, SortOrders } from '_app/hero/state';
+import { Hero } from '_app/hero/state/hero.model';
+import { DataService } from '_app/shared/data.service';
+import { LoadHeroes, RosterState, selectHeroes } from './state';
 
 @Component({
   selector: 'ul-roster',

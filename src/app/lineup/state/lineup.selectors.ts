@@ -1,8 +1,8 @@
-import { createSelector, createFeatureSelector } from '@ngrx/store';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { HeroAdapter, sortHeroes, SortOptions } from '_app/hero/state';
+import { Hero } from '_app/hero/state/hero.model';
+import { HeroFeatureState } from '_app/state/';
 
-import { Hero } from '@app/hero/state/hero.model';
-import { HeroFeatureState } from '@app/state/';
-import { SortOptions, sortHeroes, HeroAdapter } from '@app/hero/state';
 
 const getLineupFeatureState = createFeatureSelector<HeroFeatureState>('lineup');
 

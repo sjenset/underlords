@@ -1,6 +1,6 @@
-import { HeroFeatureState, InitialHeroFeatureState } from '@app/state/app.state';
+import { HeroAdapter } from '_app/hero/state';
+import { HeroFeatureState, InitialHeroFeatureState } from '_app/state/app.state';
 import { RosterActions, RosterActionTypes } from './roster.actions';
-import { HeroAdapter } from '@app/hero/state';
 
 export function RosterReducer(state: HeroFeatureState = InitialHeroFeatureState, action: RosterActions): HeroFeatureState {
   switch (action.type) {

@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Alliance, Bonus } from '@app/alliances/state';
+import { Component, Input, OnInit } from '@angular/core';
+import { Alliance, Bonus } from '_app/alliances/state';
 
 @Component({
   selector: 'ul-alliance',

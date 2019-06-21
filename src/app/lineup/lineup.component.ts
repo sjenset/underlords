@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { Hero } from '@app/hero/state/hero.model';
+import { Hero } from '_app/hero/state/hero.model';
 import { selectHeroes, LineupState } from './state';
-import { SortFacets, SortOrders, SortOptions } from '@app/hero/state';
+import { SortFacets, SortOrders, SortOptions } from '_app/hero/state';
 
 @Component({
   selector: 'ul-lineup',

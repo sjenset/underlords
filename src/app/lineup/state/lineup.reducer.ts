@@ -1,6 +1,6 @@
-import { HeroFeatureState, InitialHeroFeatureState, AppState } from '@app/state/app.state';
+import { HeroAdapter } from '_app/hero/state';
+import { AppState, HeroFeatureState, InitialHeroFeatureState } from '_app/state/app.state';
 import { LineupActions, LineupActionTypes } from './lineup.actions';
-import { HeroAdapter } from '@app/hero/state';
 
 export function HeroReducer(state: HeroFeatureState = InitialHeroFeatureState, action: LineupActions): AppState {
   switch (action.type) {
