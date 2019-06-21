@@ -1,4 +1,7 @@
-import { Hero } from '@app/hero/hero.model';
+import { Hero } from './hero.model';
+
+export * from './hero.adapter';
+export * from './hero.model';
 
 export enum SortFacets {
   TIER = 'tier',

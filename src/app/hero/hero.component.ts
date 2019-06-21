@@ -1,8 +1,9 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { AddHero, isInLineup, RemoveHero } from '@app/lineup/state';
-import { FeatureState } from '@app/state';
-import { select, Store } from '@ngrx/store';
-import { Hero } from './hero.model';
+import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+
+import { Hero } from './state/hero.model';
+import { HeroFeatureState } from '@app/state';
+import { isInLineup, RemoveHero, AddHero } from '@app/lineup/state';
 
 
 
@@ -17,7 +18,7 @@ export class HeroComponent implements OnInit {
   @Input() dimWhenSelected: boolean;
   inLineup: boolean;
 
-  constructor(private store: Store<FeatureState>) { }
+  constructor(private store: Store<HeroFeatureState>) { }
 
   ngOnInit() {
     this.store.pipe(select(isInLineup, this.hero.name)).subscribe(inLineup => this.inLineup = inLineup);
@@ -25,7 +26,7 @@ export class HeroComponent implements OnInit {
 
   onHeroClicked(): void {
     if (this.inLineup) {
-      this.store.dispatch(new RemoveHero({ name: this.hero.name }));
+      this.store.dispatch(new RemoveHero({ hero: this.hero }));
 
       return;
     }

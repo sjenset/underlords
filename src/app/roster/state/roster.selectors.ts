@@ -1,18 +1,19 @@
-import { Hero } from '@app/hero/hero.model';
-import { FeatureState, sortHeroes, SortOptions } from '@app/state';
-import { AppAdapter } from '@app/state/app.adapter';
-import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { createSelector, createFeatureSelector } from '@ngrx/store';
+
+import { Hero } from '@app/hero/state/hero.model';
+import { HeroFeatureState } from '@app/state/';
+import { SortOptions, sortHeroes, HeroAdapter } from '@app/hero/state';
 import { FilterValue } from './filters';
 import * as RosterFilterSelectors from './filters/roster-filter.selectors';
 
-const getRosterFeatureState = createFeatureSelector<FeatureState>('roster');
+const getRosterFeatureState = createFeatureSelector<HeroFeatureState>('roster');
 
 export const {
   selectAll,
   selectEntities,
   selectIds,
   selectTotal,
-} = AppAdapter.getSelectors(getRosterFeatureState);
+} = HeroAdapter.getSelectors(getRosterFeatureState);
 
 export const selectHeroes = createSelector(
   selectAll,

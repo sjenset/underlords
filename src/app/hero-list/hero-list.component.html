@@ -1,20 +1,17 @@
 <div *ngIf="heroes">
-  <div>
-    <h4>Filter by tiers</h4>
-    <button>1</button>
-    <button>2</button>
-  </div>
+  <p><b (click)="sortBy('tier')">Tier</b> - <b (click)="sortBy('name')">Name</b></p>
+  <p><b (click)="sortOrder(1)">Ascending</b> - <b (click)="sortOrder(-1)">Descending</b></p>
+  <ul class="hero-list">
+    <li class="hero-list__item" *ngFor="let hero of heroes">
+      <ul-hero [hero]="hero" [dimWhenSelected]="dimSelected"></ul-hero>
+    </li>
+  </ul>
 
   <form name="myForm" #f="ngForm">
 
-    <!-- <input *ngFor="let item of [1,2,3,4,5]; let i=index" type="checkbox" value="i"><b>{{item}}</b> -->
     <span *ngFor="let item of [1,2,3,4,5]; let i=index;">
       <input [name]="'tier_'+i" type="checkbox" value="item" [(ngModel)]="tiers[i]" (change)="updateTierFilters2()">{{item}}
     </span>
-    <!-- <input name="tiers[]" type="checkbox" value="2"/>2
-    <input name="tiers[]" type="checkbox" value="3"/>3
-    <input name="tiers[]" type="checkbox" value="4"/>4
-    <input name="tiers[]" (change)="test($event)" type="checkbox" value="5"/>5 -->
   </form>
 
   <pre>{{
@@ -22,15 +19,5 @@
     }}
     </pre>
   
-  <b (click)="sortBy('tier')">Tier</b> - <b (click)="sortBy('name')">Name</b> - <b (click)="sortOrder(1)">Ascend</b> -
-  <b (click)="sortOrder(-1)">Descend</b>
-  <ul class="hero-list">
-    <li class="hero-list__item" *ngFor="let hero of heroes">
-      <ul-hero [hero]="hero" [dimWhenSelected]="dimSelected"></ul-hero>
-    </li>
-  </ul>
-
-
   
-
 </div>

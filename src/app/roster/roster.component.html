@@ -1,2 +1,5 @@
-<h2>Roster</h2>
-<ul-hero-list [heroes]="heroes$ | async" [dimSelected]="true" (sortFacetsChanged)="setSortFacets($event)" (sortOrderChanged)="setSortOrder($event)"></ul-hero-list>
+<section *ngIf="(heroes$ | async).length">
+  <h2>Roster</h2>
+  <ul-hero-list [heroes]="heroes$ | async" [dimSelected]="true" (sortFacetsChanged)="setSortFacets($event)"
+    (sortOrderChanged)="setSortOrder($event)"></ul-hero-list>
+</section>

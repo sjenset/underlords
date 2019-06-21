@@ -1,0 +1,109 @@
+.alliance {
+  &__slots {
+    display: flex;
+    flex-direction: row;
+    margin: 0 -2px;
+  }
+
+  &__slot {
+    width: 4px;
+    height: 16px;
+    margin: 0 2px;
+    border: 1px solid #333;
+    border-radius: 2px;
+
+    &--active {
+      &.assassin {
+        background-color: #9908c2;
+      }
+
+      &.blood-bound {
+        background-color: #364718;
+      }
+
+      &.brawny {
+        background-color: #971010;
+      }
+
+      &.deadeye {
+        background-color: #8e6a04;
+      }
+
+      &.demon {
+        background-color: #c61615;
+      }
+
+      &.demon-hunter {
+        background-color: #87037e;
+      }
+
+      &.dragon {
+        background-color: #e5631f;
+      }
+
+      &.druid {
+        background-color: #137413;
+      }
+
+      &.elusive {
+        background-color: #4a79a8;
+      }
+
+      &.heartless {
+        background-color: #46d273;
+      }
+
+      &.human {
+        background-color: #009e7b;
+      }
+
+      &.hunter {
+        background-color: #da6342;
+      }
+
+      &.inventor {
+        background-color: #d57806;
+      }
+
+      &.knight {
+        background-color: #d8c018;
+      }
+
+      &.mage {
+        background-color: #3ea8b1;
+      }
+
+      &.primordial {
+        background-color: #006b6b;
+      }
+
+      &.savage {
+        background-color: #91300b;
+      }
+
+      &.scaled {
+        background-color: #362d85;
+      }
+
+      &.scrappy {
+        background-color: #a0ad1f;
+      }
+
+      &.shaman {
+        background-color: #217c4b;
+      }
+
+      &.troll {
+        background-color: #ba814e;
+      }
+
+      &.warlock {
+        background-color: #d264c4;
+      }
+
+      &.warrior {
+        background-color: #0c4f8f;
+      }
+    }    
+  }  
+}

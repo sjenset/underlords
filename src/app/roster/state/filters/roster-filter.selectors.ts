@@ -1,6 +1,4 @@
-import { Hero } from '@app/hero/hero.model';
-import { createSelector, createFeatureSelector } from '@ngrx/store';
-import { FilterValue } from './roster-filter.types';
+import { createFeatureSelector } from '@ngrx/store';
 import { RosterFilterAdapter } from './roster-filter.adapter';
 import { RosterFilterFeatureState } from './roster-filter.state';
 

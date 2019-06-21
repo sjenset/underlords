@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 
-import { Hero } from '@app/hero/hero.model';
+import { Hero } from '@app/hero/state/hero.model';
 
 export enum LineupActionTypes {
   AddHero = '[Lineup] Add Hero',
@@ -16,7 +16,7 @@ export class AddHero implements Action {
 export class RemoveHero implements Action {
   readonly type = LineupActionTypes.RemoveHero;
 
-  constructor(public payload: { name: string }) { }
+  constructor(public payload: { hero: Hero }) { }
 }
 
 export type LineupActions =

@@ -1,12 +1,13 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 
 import { Observable } from 'rxjs';
-import { Hero } from '@app/hero/hero.model';
-import { SortFacets, SortOrders, FeatureState } from '@app/state';
+import { Hero } from '@app/hero/state/hero.model';
+import { SortFacets, SortOrders } from '@app/hero/state';
 import { select, Store } from '@ngrx/store';
 import { selectTotal, filterHeroes2 } from '@app/roster/state';
 import { FilterValue } from '@app/roster/state/filters';
 import { RosterFilterUpdateAction, UpdateTiersSelected, LoadFilters } from '@app/roster/state/filters/roster-filter.actions';
+import { HeroFeatureState } from '@app/state';
 
 @Component({
   selector: 'ul-hero-list',
@@ -26,7 +27,7 @@ export class HeroListComponent implements OnInit {
     return { filterType: 'tier', values: this.tiers };
   }
 
-  constructor(private store: Store<FeatureState>) { }
+  constructor(private store: Store<HeroFeatureState>) { }
 
   ngOnInit() {
     this.testFiltering();

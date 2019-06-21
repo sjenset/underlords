@@ -1,5 +1,4 @@
-import { FeatureState } from '@app/state';
-import { RosterFilterActions, RosterFilterActionTypes, RosterFilterUpdateAction, UpdateTiersSelected, LoadFiltersSuccess } from './roster-filter.actions';
+import { RosterFilterActions, RosterFilterActionTypes, UpdateTiersSelected, LoadFiltersSuccess } from './roster-filter.actions';
 import { RosterFilterAdapter } from './roster-filter.adapter';
 import { IntialRosterFilterFeatureState, RosterFilterFeatureState } from './roster-filter.state';
 import { createReducer, on } from '@ngrx/store';

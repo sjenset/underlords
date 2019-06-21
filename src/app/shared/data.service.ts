@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Heroes } from './data/heroes';
-import { Hero } from '@app/hero/hero.model';
 import { DefaultFilters } from './data/filters';
 import { FilterValue } from '@app/roster/state/filters';
+import { Hero } from '@app/hero/state/hero.model';
+import { Alliances } from './data/alliances';
+import { Alliance } from '@app/alliances/state';
 
 @Injectable({
   providedIn: 'root'
@@ -16,5 +18,9 @@ export class DataService {
 
   public getFilters(): FilterValue[] {
     return DefaultFilters;
+  }
+
+  public getAlliances(): Alliance[] {
+    return Alliances;
   }
 }
